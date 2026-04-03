@@ -4,107 +4,91 @@
     <title>Manjunath Portfolio</title>
 </head>
 
-<body style="font-family: Arial; margin: 0; background-color: #eef2f3;">
+<body style="font-family: Arial; margin: 0; background: linear-gradient(to right, #dfe9f3, #ffffff);">
 
     <!-- Header -->
-    <div style="background: #2c3e50; color: white; padding: 30px; text-align: center;">
+    <div style="background: linear-gradient(to right, #2c3e50, #4ca1af); color: white; padding: 30px; text-align: center;">
         <h1>Manjunath 👋</h1>
         <p>CSE Student | DSA Learner | Future Software Engineer</p>
-        <button onclick="toggleDarkMode()" style="margin-top:10px; padding:8px 15px;">🌙 Dark Mode</button>
+        <button onclick="toggleDarkMode()" style="margin-top:10px; padding:8px 15px; border-radius:5px;">
+            🌙 Dark Mode
+        </button>
     </div>
 
     <!-- Main Container -->
     <div style="max-width: 900px; margin: auto; padding: 20px;">
 
-        <!-- About -->
         <h2>About Me</h2>
-        <p>I am consistently solving DSA problems and building projects to improve my skills.</p>
+        <p>I am consistently solving DSA problems and building projects.</p>
 
         <hr>
 
-        <!-- Skills -->
         <h2>Skills</h2>
         <p>Java | DSA | HTML | GitHub</p>
 
         <hr>
 
-        <!-- Projects -->
         <h2>Projects</h2>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
 
-            <div style="background: white; padding: 15px; border-radius: 10px;">
-                <h3>Two Sum</h3>
+            <div style="background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+                <h3 style="color:#2980b9;">Two Sum</h3>
                 <p>HashMap based solution</p>
                 <a href="https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java" target="_blank">View Code</a>
-                <br><br>
-                <button onclick="showDetails('p1')">Details</button>
-                <p id="p1" style="display:none;">Efficient lookup using HashMap.</p>
             </div>
 
-            <div style="background: white; padding: 15px; border-radius: 10px;">
-                <h3>Move Zeroes</h3>
+            <div style="background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+                <h3 style="color:#27ae60;">Move Zeroes</h3>
                 <p>Two pointer technique</p>
                 <a href="https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java" target="_blank">View Code</a>
-                <br><br>
-                <button onclick="showDetails('p2')">Details</button>
-                <p id="p2" style="display:none;">Moves zeroes to end efficiently.</p>
             </div>
 
-            <div style="background: white; padding: 15px; border-radius: 10px;">
-                <h3>Buy & Sell Stock</h3>
+            <div style="background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+                <h3 style="color:#e67e22;">Buy & Sell Stock</h3>
                 <p>Greedy approach</p>
                 <a href="https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java" target="_blank">View Code</a>
-                <br><br>
-                <button onclick="showDetails('p3')">Details</button>
-                <p id="p3" style="display:none;">Tracks minimum price.</p>
             </div>
 
-            <div style="background: white; padding: 15px; border-radius: 10px;">
-                <h3>Remove Duplicates</h3>
+            <div style="background: #ffffff; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+                <h3 style="color:#8e44ad;">Remove Duplicates</h3>
                 <p>In-place array method</p>
                 <a href="https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java" target="_blank">View Code</a>
-                <br><br>
-                <button onclick="showDetails('p4')">Details</button>
-                <p id="p4" style="display:none;">Two pointer logic.</p>
             </div>
 
         </div>
 
         <hr>
 
-        <!-- DSA Journey -->
         <h2>DSA Journey</h2>
         <p>I am solving problems daily as part of a 100 Days Coding Challenge.</p>
-        <a href="https://github.com/ManjunathBR-tech/100" target="_blank">View My Progress</a>
+        <a href="https://github.com/ManjunathBR-tech/100" target="_blank"
+           style="color:white; background:#8e44ad; padding:10px 20px; border-radius:5px; text-decoration:none;">
+           View My Progress
+        </a>
 
         <hr>
 
-        <!-- Resume -->
         <h2>Resume</h2>
-        <a href="resume.pdf" target="_blank">Download Resume</a>
+        <a href="resume.pdf" target="_blank"
+           style="color:white; background:#e67e22; padding:10px 20px; border-radius:5px; text-decoration:none;">
+           Download Resume
+        </a>
 
         <hr>
 
-        <!-- Contact -->
         <h2>Contact</h2>
         <p>Email: brmanjunath979@gmail.com</p>
 
     </div>
 
-    <!-- JavaScript -->
     <script>
-        function showDetails(id) {
-            var x = document.getElementById(id);
-            x.style.display = "block";
-        }
-
         function toggleDarkMode() {
-            if (document.body.style.backgroundColor === "black") {
-                document.body.style.backgroundColor = "#eef2f3";
+            if (document.body.style.background === "black") {
+                document.body.style.background = "linear-gradient(to right, #dfe9f3, #ffffff)";
                 document.body.style.color = "black";
             } else {
-                document.body.style.backgroundColor = "black";
+                document.body.style.background = "black";
                 document.body.style.color = "white";
             }
         }
