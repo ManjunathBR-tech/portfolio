@@ -17,6 +17,16 @@
     <h2 style="color: #2980b9;">About Me</h2>
     <p>I am consistently solving DSA problems and building projects to become a skilled software developer.</p>
 
+    <!-- 🔥 Popup Button -->
+    <button onclick="showMessage()" 
+    style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Click Me 👆
+    </button>
+
+    <p id="popupText" style="display:none; color: green; font-weight: bold;">
+        🚀 I am improving my coding skills daily!
+    </p>
+
     <hr>
 
     <!-- Skills -->
@@ -28,36 +38,46 @@
     <!-- Projects -->
     <h2 style="color: #2980b9;">Projects</h2>
 
-   <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px;">
-    <h3>Two Sum</h3>
-    <p>HashMap based solution</p>
-    <a href="https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java" target="_blank">
-        View Code
-    </a>
-</div>
+    <!-- Project Card -->
+    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px; transition: 0.3s;"
+         onmouseover="this.style.background='#dff9fb'" 
+         onmouseout="this.style.background='white'">
+        <h3>Two Sum</h3>
+        <p>HashMap based solution</p>
+        <a href="https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java" target="_blank">
+            View Code
+        </a>
+    </div>
 
-    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px;">
-    <h3>Move Zeroes</h3>
-    <p>Two pointer technique</p>
-    <a href="https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java" target="_blank">
-        View Code
-    </a>
-</div>
-  <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px;">
-    <h3>Buy & Sell Stock</h3>
-    <p>Greedy algorithm approach</p>
-    <a href="https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java" target="_blank">
-        View Code
-    </a>
-</div>
+    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px; transition: 0.3s;"
+         onmouseover="this.style.background='#dff9fb'" 
+         onmouseout="this.style.background='white'">
+        <h3>Move Zeroes</h3>
+        <p>Two pointer technique</p>
+        <a href="https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java" target="_blank">
+            View Code
+        </a>
+    </div>
 
-    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px;">
-    <h3>Remove Duplicates</h3>
-    <p>In-place array modification</p>
-    <a href="https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java" target="_blank">
-        View Code
-    </a>
-</div>
+    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px; transition: 0.3s;"
+         onmouseover="this.style.background='#dff9fb'" 
+         onmouseout="this.style.background='white'">
+        <h3>Buy & Sell Stock</h3>
+        <p>Greedy algorithm approach</p>
+        <a href="https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java" target="_blank">
+            View Code
+        </a>
+    </div>
+
+    <div style="background: white; margin: 15px; padding: 15px; border-radius: 10px; transition: 0.3s;"
+         onmouseover="this.style.background='#dff9fb'" 
+         onmouseout="this.style.background='white'">
+        <h3>Remove Duplicates</h3>
+        <p>In-place array modification</p>
+        <a href="https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java" target="_blank">
+            View Code
+        </a>
+    </div>
 
     <hr>
 
@@ -70,17 +90,25 @@
 
     <hr>
 
+    <!-- Resume -->
+    <h2 style="color: #2980b9;">Resume</h2>
+    <a href="resume.pdf" target="_blank"
+       style="text-decoration: none; color: white; background: #e67e22; padding: 12px 25px; border-radius: 6px;">
+        Download My Resume
+    </a>
+
+    <hr>
+
     <!-- Contact -->
     <h2 style="color: #2980b9;">Contact</h2>
     <p>Email: brmanjunath979@gmail.com</p>
-    <h2 style="color: #2980b9;">Resume</h2>
-    <a href="resume.pdf" target="_blank"
-     style="text-decoration: none; color: white; background: #e67e22; padding: 12px 25px; border-radius: 6px;">
-    Download My Resume
-   </a>
-    
 
-
+    <!-- 🔥 JavaScript -->
+    <script>
+        function showMessage() {
+            document.getElementById("popupText").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
