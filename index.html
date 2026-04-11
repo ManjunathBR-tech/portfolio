@@ -2,9 +2,22 @@
 <html>
 <head>
     <title>Manjunath Portfolio</title>
+
+    <!-- 🔥 Animated Background -->
+    <style>
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+
 </head>
 
-<body style="font-family: Arial; margin: 0; scroll-behavior: smooth; background: linear-gradient(to right, #dfe9f3, #ffffff);">
+<body style="font-family: Arial; margin: 0; scroll-behavior: smooth;
+background: linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb);
+background-size: 600% 600%;
+animation: gradientMove 10s ease infinite;">
 
     <!-- NAVBAR -->
     <div style="background: #2c3e50; padding: 15px; position: sticky; top: 0;">
@@ -42,7 +55,7 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <!-- 🔥 Dynamic Container -->
+            <!-- Dynamic Container -->
             <div id="projectsContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;"></div>
         </section>
 
@@ -79,7 +92,7 @@
         // 🌙 Dark Mode
         function toggleDarkMode() {
             if (document.body.style.background === "black") {
-                document.body.style.background = "linear-gradient(to right, #dfe9f3, #ffffff)";
+                document.body.style.background = "linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb)";
                 document.body.style.color = "black";
             } else {
                 document.body.style.background = "black";
@@ -111,7 +124,6 @@
             }
         ];
 
-        // 🔥 Render Projects Automatically
         const container = document.getElementById("projectsContainer");
 
         projects.forEach(p => {
@@ -125,8 +137,16 @@
                 transition: 0.3s;
             `;
 
-            card.onmouseover = () => card.style.transform = "scale(1.05)";
-            card.onmouseout = () => card.style.transform = "scale(1)";
+            // Hover animation
+            card.onmouseover = () => {
+                card.style.transform = "scale(1.05)";
+                card.style.boxShadow = "0px 8px 20px rgba(0,0,0,0.2)";
+            };
+
+            card.onmouseout = () => {
+                card.style.transform = "scale(1)";
+                card.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.1)";
+            };
 
             card.innerHTML = `
                 <h3 style="color:${p.color};">${p.name}</h3>
