@@ -6,7 +6,7 @@
 
 <body style="font-family: Arial; margin: 0; scroll-behavior: smooth; background: linear-gradient(to right, #dfe9f3, #ffffff);">
 
-    <!-- 🔥 NAVBAR -->
+    <!-- NAVBAR -->
     <div style="background: #2c3e50; padding: 15px; position: sticky; top: 0;">
         <a href="#about" style="color:white; margin:15px; text-decoration:none;">About</a>
         <a href="#projects" style="color:white; margin:15px; text-decoration:none;">Projects</a>
@@ -42,29 +42,8 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-
-                <div style="background: white; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color:#2980b9;">Two Sum</h3>
-                    <a href="https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java" target="_blank">View Code</a>
-                </div>
-
-                <div style="background: white; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color:#27ae60;">Move Zeroes</h3>
-                    <a href="https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java" target="_blank">View Code</a>
-                </div>
-
-                <div style="background: white; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color:#e67e22;">Buy & Sell Stock</h3>
-                    <a href="https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java" target="_blank">View Code</a>
-                </div>
-
-                <div style="background: white; padding: 15px; border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                    <h3 style="color:#8e44ad;">Remove Duplicates</h3>
-                    <a href="https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java" target="_blank">View Code</a>
-                </div>
-
-            </div>
+            <!-- 🔥 Dynamic Container -->
+            <div id="projectsContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;"></div>
         </section>
 
         <hr>
@@ -94,8 +73,10 @@
 
     </div>
 
-    <!-- JS -->
+    <!-- JAVASCRIPT -->
     <script>
+
+        // 🌙 Dark Mode
         function toggleDarkMode() {
             if (document.body.style.background === "black") {
                 document.body.style.background = "linear-gradient(to right, #dfe9f3, #ffffff)";
@@ -105,6 +86,56 @@
                 document.body.style.color = "white";
             }
         }
+
+        // 🔥 Dynamic Projects Data
+        const projects = [
+            {
+                name: "Two Sum",
+                color: "#2980b9",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java"
+            },
+            {
+                name: "Move Zeroes",
+                color: "#27ae60",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java"
+            },
+            {
+                name: "Buy & Sell Stock",
+                color: "#e67e22",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java"
+            },
+            {
+                name: "Remove Duplicates",
+                color: "#8e44ad",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java"
+            }
+        ];
+
+        // 🔥 Render Projects Automatically
+        const container = document.getElementById("projectsContainer");
+
+        projects.forEach(p => {
+            const card = document.createElement("div");
+
+            card.style = `
+                background: white;
+                padding: 15px;
+                border-radius: 12px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+                transition: 0.3s;
+            `;
+
+            card.onmouseover = () => card.style.transform = "scale(1.05)";
+            card.onmouseout = () => card.style.transform = "scale(1)";
+
+            card.innerHTML = `
+                <h3 style="color:${p.color};">${p.name}</h3>
+                <a href="${p.link}" target="_blank">View Code</a>
+            `;
+
+            container.appendChild(card);
+        });
+
     </script>
 
 </body>
