@@ -3,6 +3,9 @@
 <head>
     <title>Manjunath Portfolio</title>
 
+    <!-- 🔥 Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <style>
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
@@ -13,7 +16,7 @@
 
 </head>
 
-<body style="font-family: Arial; margin: 0;
+<body style="font-family: 'Poppins', sans-serif; margin: 0;
 background: linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb);
 background-size: 600% 600%;
 animation: gradientMove 10s ease infinite;">
@@ -30,7 +33,7 @@ animation: gradientMove 10s ease infinite;">
     <!-- HEADER -->
     <div style="background: linear-gradient(to right, #2c3e50, #4ca1af); color: white; padding: 50px; text-align: center;">
         <h1>Manjunath 👋</h1>
-        <p>I am a Computer Science student focused on DSA and building real-world projects.</p>
+        <p>Building skills in DSA, Web Development & IoT | Future Software Engineer 🚀</p>
         <button onclick="toggleDarkMode()" style="margin-top:10px; padding:8px 15px;">🌙 Dark Mode</button>
     </div>
 
@@ -89,7 +92,7 @@ animation: gradientMove 10s ease infinite;">
             }
         }
 
-        // 🔥 PROJECT DATA (FIXED)
+        // 🔥 PROJECT DATA
         const projects = [
             {
                 name: "Plantie Talks 🌱",
@@ -147,7 +150,7 @@ animation: gradientMove 10s ease infinite;">
 
                 ${p.video ? `<br><br>
                 <button onclick="openVideo('${p.video}')" 
-                style="padding:8px 12px; background:#e74c3c; color:white; border:none; border-radius:5px;">
+                style="padding:8px 12px; background:#e74c3c; color:white; border:none; border-radius:5px; transition:0.3s;">
                 Watch Demo 🎥</button>` : ""}
             `;
 
