@@ -82,18 +82,29 @@ animation: gradientMove 10s ease infinite;">
             }
         }
 
-        const projects = [
-            {
-                name: "Two Sum",
-                color: "#2980b9",
-                link: "https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java"
-            },
-            {
-                name: "Move Zeroes",
-                color: "#27ae60",
-                link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java"
-            }
-        ];
+     const projects = [
+    {
+        name: "Plantie Talks 🌱",
+        color: "#16a085",
+        link: "https://github.com/ManjunathBR-tech/plantie-talks",
+        desc: "Smart talking plant pot using sensors and voice modules.",
+        image: "https://raw.githubusercontent.com/ManjunathBR-tech/plantie-talks/main/dry.png"
+    },
+    {
+        name: "Two Sum",
+        color: "#2980b9",
+        link: "https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java",
+        desc: "HashMap based solution",
+        image: ""
+    },
+    {
+        name: "Move Zeroes",
+        color: "#27ae60",
+        link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java",
+        desc: "Two pointer technique",
+        image: ""
+    }
+];
 
         const container = document.getElementById("projectsContainer");
 
@@ -111,11 +122,12 @@ animation: gradientMove 10s ease infinite;">
             card.onmouseover = () => card.style.transform = "scale(1.05)";
             card.onmouseout = () => card.style.transform = "scale(1)";
 
-            card.innerHTML = `
-                <h3 style="color:${p.color};">${p.name}</h3>
-                <a href="${p.link}" target="_blank">View Code</a>
-            `;
-
+          card.innerHTML = `
+    ${p.image ? `<img src="${p.image}" style="width:100%; border-radius:10px;">` : ""}
+    <h3 style="color:${p.color};">${p.name}</h3>
+    <p>${p.desc}</p>
+    <a href="${p.link}" target="_blank">View Project</a>
+`;
             container.appendChild(card);
         });
     </script>
