@@ -37,13 +37,12 @@ animation: gradientMove 10s ease infinite;">
     <!-- MAIN -->
     <div style="max-width: 900px; margin: auto; padding: 20px;">
 
-        <!-- INTRO -->
         <h2>Welcome</h2>
         <p>This is my personal portfolio website where I showcase my coding journey and projects.</p>
 
         <hr>
 
-        <!-- QUICK PROJECT PREVIEW -->
+        <!-- PROJECTS -->
         <h2>Featured Work</h2>
         <div id="projectsContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;"></div>
 
@@ -70,8 +69,16 @@ animation: gradientMove 10s ease infinite;">
         </p>
     </div>
 
+    <!-- VIDEO POPUP -->
+    <div id="videoPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); text-align:center;">
+        <video id="videoPlayer" controls style="margin-top:10%; width:70%;"></video>
+        <br><br>
+        <button onclick="closeVideo()" style="padding:10px;">Close ❌</button>
+    </div>
+
     <!-- JS -->
     <script>
+
         function toggleDarkMode() {
             if (document.body.style.background === "black") {
                 document.body.style.background = "linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb)";
@@ -82,30 +89,31 @@ animation: gradientMove 10s ease infinite;">
             }
         }
 
-     const projects = [
-    {
-        name: "Plantie Talks 🌱",
-        color: "#16a085",
-        link: "https://github.com/ManjunathBR-tech/plantie-talks",
-        desc: "Smart talking plant pot using sensors and voice modules.",
-        image: "https://raw.githubusercontent.com/ManjunathBR-tech/plantie-talks/main/dry.png"
-        video: "https://raw.githubusercontent.com/ManjunathBR-tech/plantie-talks/main/plantie.mp4"
-    },
-    {
-        name: "Two Sum",
-        color: "#2980b9",
-        link: "https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java",
-        desc: "HashMap based solution",
-        image: ""
-    },
-    {
-        name: "Move Zeroes",
-        color: "#27ae60",
-        link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java",
-        desc: "Two pointer technique",
-        image: ""
-    }
-];
+        // 🔥 PROJECT DATA (FIXED)
+        const projects = [
+            {
+                name: "Plantie Talks 🌱",
+                color: "#16a085",
+                link: "https://github.com/ManjunathBR-tech/plantie-talks",
+                desc: "Smart talking plant pot using sensors and voice modules.",
+                image: "https://raw.githubusercontent.com/ManjunathBR-tech/plantie-talks/main/dry.png",
+                video: "https://raw.githubusercontent.com/ManjunathBR-tech/plantie-talks/main/plantie.mp4"
+            },
+            {
+                name: "Two Sum",
+                color: "#2980b9",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/TwoSum.java",
+                desc: "HashMap based solution",
+                image: ""
+            },
+            {
+                name: "Move Zeroes",
+                color: "#27ae60",
+                link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java",
+                desc: "Two pointer technique",
+                image: ""
+            }
+        ];
 
         const container = document.getElementById("projectsContainer");
 
@@ -120,39 +128,43 @@ animation: gradientMove 10s ease infinite;">
                 transition: 0.3s;
             `;
 
-            card.onmouseover = () => card.style.transform = "scale(1.05)";
-            card.onmouseout = () => card.style.transform = "scale(1)";
+            card.onmouseover = () => {
+                card.style.transform = "scale(1.05)";
+                card.style.boxShadow = "0px 8px 20px rgba(0,0,0,0.2)";
+            };
 
-   card.innerHTML = `
-    ${p.image ? `<img src="${p.image}" style="width:100%; border-radius:10px;">` : ""}
-    <h3 style="color:${p.color};">${p.name}</h3>
-    <p>${p.desc}</p>
+            card.onmouseout = () => {
+                card.style.transform = "scale(1)";
+                card.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.1)";
+            };
 
-    <a href="${p.link}" target="_blank">View Project</a>
-    
-    ${p.video ? `<br><br><button onclick="openVideo('${p.video}')" 
-    style="padding:8px 12px; background:#e74c3c; color:white; border:none; border-radius:5px;">
-    Watch Demo 🎥</button>` : ""}
-`;
+            card.innerHTML = `
+                ${p.image ? `<img src="${p.image}" style="width:100%; border-radius:10px;">` : ""}
+                <h3 style="color:${p.color};">${p.name}</h3>
+                <p>${p.desc}</p>
+
+                <a href="${p.link}" target="_blank">View Project</a>
+
+                ${p.video ? `<br><br>
+                <button onclick="openVideo('${p.video}')" 
+                style="padding:8px 12px; background:#e74c3c; color:white; border:none; border-radius:5px;">
+                Watch Demo 🎥</button>` : ""}
+            `;
+
             container.appendChild(card);
         });
+
         function openVideo(src) {
-    document.getElementById("videoPopup").style.display = "block";
-    document.getElementById("videoPlayer").src = src;
-}
+            document.getElementById("videoPopup").style.display = "block";
+            document.getElementById("videoPlayer").src = src;
+        }
 
-function closeVideo() {
-    document.getElementById("videoPopup").style.display = "none";
-    document.getElementById("videoPlayer").pause();
-}
+        function closeVideo() {
+            document.getElementById("videoPopup").style.display = "none";
+            document.getElementById("videoPlayer").pause();
+        }
+
     </script>
-<div id="videoPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); text-align:center;">
 
-    <video id="videoPlayer" controls style="margin-top:10%; width:70%;"></video>
-
-    <br><br>
-    <button onclick="closeVideo()" style="padding:10px;">Close ❌</button>
-
-</div>
 </body>
 </html>
