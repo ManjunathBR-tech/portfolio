@@ -3,7 +3,6 @@
 <head>
     <title>Manjunath Portfolio</title>
 
-    <!-- 🔥 Animated Background -->
     <style>
         @keyframes gradientMove {
             0% { background-position: 0% 50%; }
@@ -14,82 +13,65 @@
 
 </head>
 
-<body style="font-family: Arial; margin: 0; scroll-behavior: smooth;
+<body style="font-family: Arial; margin: 0;
 background: linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb);
 background-size: 600% 600%;
 animation: gradientMove 10s ease infinite;">
 
     <!-- NAVBAR -->
     <div style="background: #2c3e50; padding: 15px; position: sticky; top: 0;">
-        <a href="#about" style="color:white; margin:15px; text-decoration:none;">About</a>
-        <a href="#projects" style="color:white; margin:15px; text-decoration:none;">Projects</a>
-        <a href="#resume" style="color:white; margin:15px; text-decoration:none;">Resume</a>
-        <a href="#contact" style="color:white; margin:15px; text-decoration:none;">Contact</a>
+        <a href="index.html" style="color:white; margin:15px;">Home</a>
+        <a href="about.html" style="color:white; margin:15px;">About</a>
+        <a href="projects.html" style="color:white; margin:15px;">Projects</a>
+        <a href="resume.html" style="color:white; margin:15px;">Resume</a>
+        <a href="contact.html" style="color:white; margin:15px;">Contact</a>
     </div>
 
     <!-- HEADER -->
     <div style="background: linear-gradient(to right, #2c3e50, #4ca1af); color: white; padding: 50px; text-align: center;">
         <h1>Manjunath 👋</h1>
-        <p>CSE Student | DSA Learner | Future Software Engineer</p>
+        <p>I am a Computer Science student focused on DSA and building real-world projects.</p>
         <button onclick="toggleDarkMode()" style="margin-top:10px; padding:8px 15px;">🌙 Dark Mode</button>
     </div>
 
     <!-- MAIN -->
     <div style="max-width: 900px; margin: auto; padding: 20px;">
 
-        <!-- ABOUT -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am consistently solving DSA problems and building projects.</p>
-        </section>
+        <!-- INTRO -->
+        <h2>Welcome</h2>
+        <p>This is my personal portfolio website where I showcase my coding journey and projects.</p>
 
         <hr>
 
-        <!-- SKILLS -->
-        <h2>Skills</h2>
-        <p>Java | DSA | HTML | GitHub</p>
-
-        <hr>
-
-        <!-- PROJECTS -->
-        <section id="projects">
-            <h2>Projects</h2>
-
-            <!-- Dynamic Container -->
-            <div id="projectsContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;"></div>
-        </section>
+        <!-- QUICK PROJECT PREVIEW -->
+        <h2>Featured Work</h2>
+        <div id="projectsContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;"></div>
 
         <hr>
 
         <!-- DSA -->
         <h2>DSA Journey</h2>
         <p>I am solving problems daily as part of a 100 Days Coding Challenge.</p>
-
-        <hr>
-
-        <!-- RESUME -->
-        <section id="resume">
-            <h2>Resume</h2>
-            <a href="resume.pdf" target="_blank"
-               style="color:white; background:#e67e22; padding:10px 20px; border-radius:5px; text-decoration:none;">
-               Download Resume
-            </a>
-        </section>
-
-        <hr>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: brmanjunath979@gmail.com</p>
-        </section>
+        <a href="https://github.com/ManjunathBR-tech/100" target="_blank"
+           style="color:white; background:#8e44ad; padding:10px 20px; border-radius:5px; text-decoration:none;">
+           View My Progress
+        </a>
 
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script>
+    <!-- FOOTER -->
+    <div style="background:#2c3e50; color:white; text-align:center; padding:15px; margin-top:40px;">
+        <p>© 2026 Manjunath B R</p>
+        <p>
+            Built by me 💻 |
+            <a href="https://github.com/ManjunathBR-tech" target="_blank" style="color:#1abc9c;">
+                GitHub
+            </a>
+        </p>
+    </div>
 
-        // 🌙 Dark Mode
+    <!-- JS -->
+    <script>
         function toggleDarkMode() {
             if (document.body.style.background === "black") {
                 document.body.style.background = "linear-gradient(270deg, #dfe9f3, #ffffff, #d1f2eb)";
@@ -100,7 +82,6 @@ animation: gradientMove 10s ease infinite;">
             }
         }
 
-        // 🔥 Dynamic Projects Data
         const projects = [
             {
                 name: "Two Sum",
@@ -111,16 +92,6 @@ animation: gradientMove 10s ease infinite;">
                 name: "Move Zeroes",
                 color: "#27ae60",
                 link: "https://github.com/ManjunathBR-tech/100/blob/main/MoveZeroes.java"
-            },
-            {
-                name: "Buy & Sell Stock",
-                color: "#e67e22",
-                link: "https://github.com/ManjunathBR-tech/100/blob/main/BuySellStock.java"
-            },
-            {
-                name: "Remove Duplicates",
-                color: "#8e44ad",
-                link: "https://github.com/ManjunathBR-tech/100/blob/main/RemoveDuplicates.java"
             }
         ];
 
@@ -137,16 +108,8 @@ animation: gradientMove 10s ease infinite;">
                 transition: 0.3s;
             `;
 
-            // Hover animation
-            card.onmouseover = () => {
-                card.style.transform = "scale(1.05)";
-                card.style.boxShadow = "0px 8px 20px rgba(0,0,0,0.2)";
-            };
-
-            card.onmouseout = () => {
-                card.style.transform = "scale(1)";
-                card.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.1)";
-            };
+            card.onmouseover = () => card.style.transform = "scale(1.05)";
+            card.onmouseout = () => card.style.transform = "scale(1)";
 
             card.innerHTML = `
                 <h3 style="color:${p.color};">${p.name}</h3>
@@ -155,7 +118,6 @@ animation: gradientMove 10s ease infinite;">
 
             container.appendChild(card);
         });
-
     </script>
 
 </body>
