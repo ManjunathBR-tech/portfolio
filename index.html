@@ -189,10 +189,12 @@
             container.appendChild(card);
         });
 
-        function openVideo(src) {
-            document.getElementById("videoPopup").style.display = "block";
-            document.getElementById("videoPlayer").src = src;
-        }
+       function openVideo(src) {
+    const player = document.getElementById("videoPlayer");
+    player.src = src;
+    player.load();   // VERY IMPORTANT
+    document.getElementById("videoPopup").style.display = "block";
+}
 
         function closeVideo() {
             document.getElementById("videoPopup").style.display = "none";
